@@ -50,7 +50,42 @@ function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-    /* YOUR CODE HERE */
+    if playerMove = "rock" {
+      switch (computerMove)
+      {
+        case 'rock':
+          winner = "tie";
+          break;
+        case 'paper':
+          winner = 'computer';
+          break;
+        default: winner = 'user';
+      }
+    }
+    if playerMove = "paper" {
+      switch (computerMove)
+      {
+        case 'paper':
+          winner = "tie";
+          break;
+        case 'scissors':
+          winner = 'computer';
+          break;
+        default: winner = 'user';
+      }
+    }
+    if playerMove = "scissors" {
+      switch (computerMove)
+      {
+        case 'scissors':
+          winner = "tie";
+          break;
+        case 'rock':
+          winner = 'computer';
+          break;
+        default: winner = 'user';
+      }
+    }
     return winner;
 }
 
@@ -58,7 +93,30 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+
+    while (playerWins < 5 && computerWins < 5) {
+      console.log("  ");
+      console.log("Starting New Game");
+      var man = randomPlay();
+      console.log("User Selects: " + man);
+      var machine = getPlayerMove();
+      console.log("Computer Selects: " + machine);
+      var winner = getWinner(man,machine);
+      if winner === "user" {
+        playerWins + 1;
+        console.log("User Wins"):
+      }
+      else {
+        if winner === "computer" {
+          computerWins + 1;
+          console.log("Computer Wins");
+        }
+        else {
+          console.log("Tie - No One Wins");
+        }
+      console.log("User: " + playerWins + "Computer: "  + computerWins);
+      }
+  }
+return [playerWins, computerWins];
 }
+*/
